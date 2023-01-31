@@ -11,10 +11,11 @@ Main Setup:
    `{
  "captions":   "", // hastags 
  "mainthree": [], // top 3 hashatgs
- "description" : , // description for youtube 
- "redditname" : , // reddit name to scrape from
- "email" : ,// youtube email
- "password": // youtube password 
+ "description" : "", // description for youtube 
+ "redditname" :"" , // reddit name to scrape from
+ "email" : "",// youtube email
+ "password":"", // youtube password 
+ "tiktoksession" : "" //sessionid from tiktok mainpage in cookies
 }`
 
 Make sure files can read this file by changing the pointer to whatever you call your json file
