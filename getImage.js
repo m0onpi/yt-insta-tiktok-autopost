@@ -9,7 +9,7 @@ const tag = require('./info.json')
 const getimage = async () =>  {
   axios.get(`https://www.reddit.com/r/${tag.redditname}/top/.json?t=day`)
   .then(response => {
-    const firstPost = response.data.data.children[0].data;
+    const firstPost = response.data.data.children[1].data;
     const title = firstPost.title;
     const imageUrl = firstPost.url;
     const fileType = firstPost.post_hint

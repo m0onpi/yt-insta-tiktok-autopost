@@ -14,25 +14,24 @@ with open('filetype.json') as h:
 
 
 mainthree = info["mainthree"]
-shuffled = random.shuffle(mainthree)
-
+shuffled = random.sample(mainthree, len(mainthree))
 session_id = info["tiktoksessionid"]
-title = titlevalue
-tags = shuffled
+##title = titlevalue
+##tags = shuffled
 
 if (filetype == "hosted:video"):
    file = './public/imagevideo.mp4'
-   uploadVideo(session_id, file, title, tags, verbose=True)
+   uploadVideo(session_id, file, titlevalue, shuffled, verbose=True)
 
 
 if (filetype == "image"):
    file = './public/mainvideo.mp4'
-   uploadVideo(session_id, file, title, tags, verbose=True)
+   uploadVideo(session_id, file, titlevalue, shuffled, verbose=True)
 
 
 if (filetype == "link"):
    file = './public/mainvideo.mp4'
-   uploadVideo(session_id, file, title, tags, verbose=True)
+   uploadVideo(session_id, file, titlevalue, shuffled, verbose=True)
 
 # Publish the video
 # uploadVideo(session_id, file, title, tags, verbose=True)

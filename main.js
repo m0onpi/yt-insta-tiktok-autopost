@@ -5,7 +5,7 @@ const {videoPost, imagePost} = require('./instaMain');
 const { upload } = require('youtube-videos-uploader'); //vanilla javascript
 const titles = require('./title.json')
 require("dotenv").config();
-const tag = require('./motivation.json')
+const tag = require('./info.json')
 
 sharp('./public/thumbnail.jpg')
 .resize({
