@@ -3,7 +3,7 @@ const { IgApiClient } = require('instagram-private-api');
 const { readFile } = require('fs');
 const { promisify } = require('util');
 const readFileAsync = promisify(readFile);
-const tag = require('./motivation.json')
+const tag = require('./info.json')
 const image = "./public/output.jpg"
 const titles = require('./title.json')
 

@@ -4,7 +4,7 @@ const FFmpeg  = require('fluent-ffmpeg')
 var videoshow = require('videoshow')
 var  sharp = require('sharp')
 var finalVideoPath = './public/imagevideo.mp4'
-const tag = require('./motivation.json')
+const tag = require('./info.json')
 
 const getimage = async () =>  {
   axios.get(`https://www.reddit.com/r/${tag.redditname}/top/.json?t=day`)
