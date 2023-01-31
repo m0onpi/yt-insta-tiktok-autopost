@@ -34,9 +34,6 @@ if (filetype == "link"):
    file = './public/mainvideo.mp4'
    uploadVideo(session_id, file, title, tags, verbose=True)
 
-
-
-file = "public/videoReel.mp4"
 # Publish the video
 # uploadVideo(session_id, file, title, tags, verbose=True)
 
