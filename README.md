@@ -6,7 +6,7 @@
 
 Main Setup:
 1.
--create a json file including:
+-create a info.json file including:
    
    `{
  "captions":   "", // hastags 
