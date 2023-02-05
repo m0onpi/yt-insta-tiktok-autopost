@@ -9,24 +9,11 @@ const tag = require('./info.json')
 const getimage = async () =>  {
   axios.get(`https://www.reddit.com/r/${tag.redditname}/top/.json?t=day`)
   .then(response => {
-    const firstPost = response.data.data.children[1].data;
+    const firstPost = response.data.data.children[0].data;
     const title = firstPost.title;
     const imageUrl = firstPost.url;
     const fileType = firstPost.post_hint
     console.log(firstPost)
-    const thumbnail = firstPost.thumbnail
-    axios({
-      method: 'get',
-      url: thumbnail,
-      responseType: 'stream'
-    })
-      .then(response => {
-        response.data.pipe(fs.createWriteStream(`./public/thumbnail.jpg`));
-      })
-      .catch(error => {
-        console.log(error);
-      });
-    
     console.log(fileType)
     fs.writeFile("title.json",JSON.stringify(title), err => {
       if (err) {

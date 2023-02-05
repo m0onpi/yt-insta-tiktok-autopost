@@ -7,20 +7,6 @@ const titles = require('./title.json')
 require("dotenv").config();
 const tag = require('./info.json')
 
-sharp('./public/thumbnail.jpg')
-.resize({
-fit: sharp.fit.contain,
-width:1080,
-height:1920})
-
-.toFile('./public/truethumbnail.jpg'), (error, info) => {
-if (error) {
-console.error(error)
-} else {
-console.log('Image blurred successfully');
-
-};
-}
 
 let tagsshuffled = tag.mainthree
     .map(value => ({ value, sort: Math.random() }))
@@ -41,13 +27,19 @@ const videovideo =  { path: './public/mainvideo.mp4', title: `${titles}` + ' ' +
 const pointer = () => {
     if (type === "image"){
         console.log('This is an image type')
+        const thumbnail = execSync('ffmpeg -y -i public/mainvideo.mp4  -vf "select=eq(n\,2)" -vframes 1 public/thumbnail.png', { encoding: 'utf-8' });
+        console.log(thumbnail);
+
         imagePost();
         upload (credentials, [imagevideo]).then(console.log)
 
     }
     if (type === "hosted:video"|| type === "rich:video"){
         const output = execSync('ffmpeg -y -i public/videovideo.mp4 -i public/videovideo.mp3 -c:v copy -c:a aac public/mainvideo.mp4', { encoding: 'utf-8' });  // the default is 'buffer'
+        const thumbnail = execSync('ffmpeg -y -i public/mainvideo.mp4  -vf "select=eq(n\,2)" -vframes 1 public/thumbnail.png', { encoding: 'utf-8' });
         console.log(output);
+        console.log(thumbnail);
+
         videoPost();
         upload (credentials, [videovideo]).then(console.log)
 
@@ -55,9 +47,13 @@ const pointer = () => {
     }
     if (type === "link"){
         const output = execSync('ffmpeg -y -i public/videovideo.mp4 -i public/videovideo.mp3 -c:v copy -c:a aac public/mainvideo.mp4', { encoding: 'utf-8' });  // the default is 'buffer'
+        const thumbnail = execSync('ffmpeg -y -i public/mainvideo.mp4  -vf "select=eq(n\,2)" -vframes 1 public/thumbnail.png', { encoding: 'utf-8' });
         console.log(output);
+        console.log(thumbnail);
+
         videoPost();
         upload (credentials, [videovideo]).then(console.log)
+        
         console.log('This is an link type')
     }
 }
