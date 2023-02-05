@@ -32,7 +32,7 @@ const videoPost = async () => {
   await login();
 
   const videoPath = './public/mainvideo.mp4';
-  const coverPath = './public/truethumbnail.jpg';
+  const coverPath = './public/thumbnail.png';
 
   const publishResult = await ig.publish.video({
     // read the file into a Buffer

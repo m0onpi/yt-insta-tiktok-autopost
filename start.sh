@@ -4,4 +4,3 @@ node getImage
 
 node main
 
-python post.py 
