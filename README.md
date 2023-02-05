@@ -1,4 +1,4 @@
-# yt-insta-autopost
+# yt-insta-tiktok-autopost
 
 `clone `
 
