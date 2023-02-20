@@ -35,7 +35,7 @@ const pointer = () => {
     }
     if (type === "hosted:video"|| type === "rich:video"){
         const output = execSync('ffmpeg -y -i public/videovideo.mp4 -i public/videovideo.mp3 -c:v copy -c:a aac public/mainvideo.mp4', { encoding: 'utf-8' });  // the default is 'buffer'
-        const thumbnail = execSync('ffmpeg -y -i public/mainvideo.mp4 -vf "select=eq(n\,2)" -vframes 1 public/thumbnail.png', { encoding: 'utf-8' });
+        const thumbnail = execSync('ffmpeg -y -i public/mainvideo.mp4 -vframes 1 public/thumbnail.jpg', { encoding: 'utf-8' });
         console.log(output);
         console.log(thumbnail);
 
@@ -46,7 +46,7 @@ const pointer = () => {
     }
     if (type === "link"){
         const output = execSync('ffmpeg -y -i public/videovideo.mp4 -i public/videovideo.mp3 -c:v copy -c:a aac public/mainvideo.mp4', { encoding: 'utf-8' });  // the default is 'buffer'
-        const thumbnail = execSync('ffmpeg -y -i public/mainvideo.mp4 -vf "select=eq(n\,2)" -vframes 1 public/thumbnail.png', { encoding: 'utf-8' });
+        const thumbnail = execSync('ffmpeg -y -i public/mainvideo.mp4 -vframes 1 public/thumbnail.jpg', { encoding: 'utf-8' });
         console.log(output);
         console.log(thumbnail);
 

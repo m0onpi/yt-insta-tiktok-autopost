@@ -119,9 +119,9 @@ const getimage = async () =>  {
     const resize = async () =>{
       sharp('./public/image.jpg')
       .resize({
-          fit: sharp.fit.contain,
           width:1080,
-          height:1920})
+          height:1920,
+          fit: 'inside'})
     
       .toFile('./public/output.jpg'), (error, info) => {
       if (error) {
@@ -135,7 +135,6 @@ const getimage = async () =>  {
       transition: false,
       videoBitrate: 2048 ,
       videoCodec: 'libx264', 
-      size: '1080x1920',
       format: 'mp4' 
     }
     
