@@ -1,5 +1,5 @@
 # yt-insta-tiktok-autopost
-
+UPDATE *TIKTOK SETUP NOT WORTH , WIP*
 `clone `
 
 `npm i `
