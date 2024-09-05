@@ -4,10 +4,9 @@ const FFmpeg  = require('fluent-ffmpeg')
 var videoshow = require('videoshow')
 var  sharp = require('sharp')
 var finalVideoPath = './public/imagevideo.mp4'
-const tag = require('./info.json')
 
 const getimage = async () =>  {
-  axios.get(`https://www.reddit.com/r/${tag.redditname}/top/.json?t=day`)
+  axios.get(`https://www.reddit.com/r/aivideo/top/.json?t=day`)
   .then(response => {
     const firstPost = response.data.data.children[0].data;
     const title = firstPost.title;
@@ -39,7 +38,7 @@ const getimage = async () =>  {
           });
         axios({
           method: 'get',
-          url: firstPost.url +'/DASH_audio.mp4',
+          url: firstPost.media.reddit_video.fallback_url +'/DASH_audio.mp4',
           responseType: 'stream'
         })
           .then(response => {
